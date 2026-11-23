@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>День открытых дверей — Сетевое и системное администрирование 09.02.06</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====== ШАПКА ====== -->
+<header>
+  <h1>День открытых дверей 🎓</h1>
+  <p>Специальность <b>09.02.06 «Сетевое и системное администрирование»</b></p>
+  <span class="badge">СРОК ОБУЧЕНИЯ: 3 ГОДА 10 МЕСЯЦЕВ</span>
+</header>
+
+<!-- ====== СХЕМА «ЧТО ТЫ БУДЕШЬ УМЕТЬ» ====== -->
+<section id="skills">
+  <h2>Что ты будешь уметь</h2>
+  <div class="skills">
+    <div class="skill-card">
+      <div class="icon">🔧</div>
+      <h3>Сборка компьютеров</h3>
+      <p>Соберёшь ПК с нуля, подберёшь комплектующие и настроишь оборудование.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon">🛡️</div>
+      <h3>Защита от вирусов</h3>
+      <p>Настроишь антивирусы и брандмауэры, обеспечишь информационную безопасность.</p>
+    </div>
+    <div class="skill-card">
+      <div class="icon">🕸️</div>
+      <h3>Настройка интернета</h3>
+      <p>Развернёшь и настроишь локальные сети, подключишь компьютеры и серверы.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ПРОВЕРКА НОУТБУКА ====== -->
+<section id="laptop">
+  <h2>Проверить мой ноутбук 💻</h2>
+  <p class="section-sub">Ответь на три вопроса — и узнай, подойдёт ли твой ноутбук для учёбы</p>
+  <div class="laptop-box">
+    <div class="question">
+      <h3>1. Какой у тебя процессор?</h3>
+      <label><input type="radio" name="cpu" value="2"> Intel Core i3 / AMD Ryzen 3 или новее</label>
+      <label><input type="radio" name="cpu" value="1"> Intel Celeron / Pentium / старый AMD</label>
+      <label><input type="radio" name="cpu" value="0"> Не знаю</label>
+    </div>
+    <div class="question">
+      <h3>2. Сколько оперативной памяти?</h3>
+      <label><input type="radio" name="ram" value="2"> 8 ГБ и больше</label>
+      <label><input type="radio" name="ram" value="1"> 4 ГБ</label>
+      <label><input type="radio" name="ram" value="0"> 2 ГБ или не знаю</label>
+    </div>
+    <div class="question">
+      <h3>3. Хватает ли места на диске (хотя бы 40 ГБ свободно)?</h3>
+      <label><input type="radio" name="disk" value="2"> Да, свободно много места</label>
+      <label><input type="radio" name="disk" value="1"> Места впритык</label>
+      <label><input type="radio" name="disk" value="0"> Нет / не знаю</label>
+    </div>
+    <button class="btn btn-accent" onclick="checkLaptop()">Проверить мой ноутбук</button>
+    <p class="result" id="laptopResult"></p>
+  </div>
+</section>
+
+<!-- ====== КЕМ РАБОТАТЬ ====== -->
+<section id="jobs">
+  <h2>Кем работать</h2>
+  <div class="jobs">
+    <div class="job-card">
+      <div class="icon">🧰</div>
+      <h3>Помощник мастера</h3>
+      <p>Сборка, диагностика и ремонт компьютерной техники на сервисных участках.</p>
+      <span class="salary">от 35 000 ₽</span>
+    </div>
+    <div class="job-card">
+      <div class="icon">🎧</div>
+      <h3>Работник техподдержки</h3>
+      <p>Помощь пользователям, установка программ, решение ежедневных проблем с ПК.</p>
+      <span class="salary">от 45 000 ₽</span>
+    </div>
+    <div class="job-card">
+      <div class="icon">🌐</div>
+      <h3>Сетевой техник</h3>
+      <p>Монтаж и настройка сетевого оборудования, обслуживание локальных сетей.</p>
+      <span class="salary">от 55 000 ₽</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== КАЛЬКУЛЯТОР ОЦЕНОК ====== -->
+<section id="calc">
+  <h2>Калькулятор шансов на поступление 📊</h2>
+  <p class="section-sub">Введи свои оценки — узнай свои шансы</p>
+  <div class="calc-box">
+    <p class="calc-inputs">
+      <label>Математика: <input type="number" id="g1" min="2" max="5" placeholder="4"></label>
+      <label>Русский: <input type="number" id="g2" min="2" max="5" placeholder="4"></label>
+      <label>Информатика: <input type="number" id="g3" min="2" max="5" placeholder="5"></label>
+    </p>
+    <button class="btn btn-accent2" onclick="calcChances()">Узнать шансы</button>
+    <p class="calc-result" id="calcResult"></p>
+  </div>
+</section>
+
+<!-- ====== ЗАПИСЬ НА ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ ====== -->
+<section id="signup">
+  <h2>Приходи на день открытых дверей!</h2>
+  <p>Покажем аудитории и лаборатории, расскажем про поступление и ответим на все вопросы.</p>
+  <button class="btn btn-big" onclick="signUp()">Записаться на день открытых дверей</button>
+  <p class="result" id="signupMsg"></p>
+</section>
+
+<!-- ====== ПОДАЧА ДОКУМЕНТОВ / АНКЕТА ====== -->
+<!-- Анкета отправляется через Formspree на почту darya.bayrak24@mail.ru -->
+<section id="apply">
+  <h2>Подать документы 📄</h2>
+  <p>Заполни анкету — она придёт в приёмную комиссию на почту, и мы свяжемся с тобой.</p>
+  <form class="form" id="applyForm" action="https://formspree.io/f/mgakplkk" method="POST">
+    <label for="fName">Фамилия и имя *</label>
+    <input type="text" id="fName" name="ФИО" placeholder="Иван Иванов" required>
+
+    <label for="fPhone">Телефон *</label>
+    <input type="tel" id="fPhone" name="Телефон" placeholder="+7 (___) ___-__-__" required>
+
+    <label for="fMail">E-mail</label>
+    <input type="email" id="fMail" name="E-mail" placeholder="ivan@mail.ru">
+
+    <label for="fScore">Твой средний балл</label>
+    <input type="number" id="fScore" name="Средний балл" min="2" max="5" step="0.1" placeholder="4.2">
+
+    <label for="fComment">Комментарий</label>
+    <input type="text" id="fComment" name="Комментарий" placeholder="Хочу поступить!">
+
+    <button type="submit" class="btn btn-accent">Отправить заявку</button>
+    <p class="result" id="applyResult"></p>
+  </form>
+</section>
+
+<!-- ====== КОНТАКТЫ И СРОК ОБУЧЕНИЯ ====== -->
+<div class="info-band">
+  <h2>Контакты</h2>
+  <p class="term">⏱ Учиться всего 3 года 10 месяцев</p>
+  <div class="contacts">
+    <p>📍 Адрес: г. Люберцы, Октябрьский проспект, д. 114</p>
+    <p>📞 Телефон приёмной комиссии: <a href="tel:+74955037481">8 (495) 503-74-81</a></p>
+    <p>📞 Приёмная директора: <a href="tel:+74955034577">8 (495) 503-45-77</a></p>
+    <p>✉️ E-mail: <a href="mailto:mo_gagarintechn@mosreg.ru">mo_gagarintechn@mosreg.ru</a></p>
+    <p>🕘 Приёмная комиссия: Пн–Пт, с 9:00 до 16:30</p>
+    <p>👤 Приём граждан руководителем: среда, 15:00–18:00</p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Колледж. Специальность 09.02.06 «Сетевое и системное администрирование».
+  <br>Ждём тебя на дне открытых дверей!
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
